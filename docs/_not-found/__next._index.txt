@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[9630,[],""]
+3:I[1380,[],""]
+:HL["/kindergarten-marketing-v2/_next/static/css/f8b5359388e7e41d.css","style"]
+:HL["/kindergarten-marketing-v2/_next/static/css/9cce9a3111e5cbcf.css","style"]
+0:{"rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/kindergarten-marketing-v2/_next/static/css/f8b5359388e7e41d.css","precedence":"next"}],["$","link","1",{"rel":"stylesheet","href":"/kindergarten-marketing-v2/_next/static/css/9cce9a3111e5cbcf.css","precedence":"next"}]],["$","html",null,{"lang":"ru","children":["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"n9ydGYfs6lfvyItUZToj9"}
