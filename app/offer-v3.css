@@ -168,3 +168,30 @@
   .offer-v3 .final-section .system-bottom { padding-top: 36px; }
   .offer-v3 .final-cta .primary-cta { min-height: 74px; font-size: 14px; }
 }
+
+/* Compact parent journey diagram. */
+.offer-v3 .offer-path { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 28px; margin: 32px 0; padding: 28px 0; font-size: clamp(14px, 1.1vw, 20px); line-height: 1.35; }
+.offer-v3 .offer-path-part { position: relative; display: flex; flex-direction: column; align-items: center; gap: 15px; text-align: center; }
+.offer-v3 .offer-path-icon { display: grid; place-items: center; width: 58px; height: 58px; border: 1px solid rgba(114,165,255,.4); border-radius: 18px; background: rgba(49,104,223,.12); color: #78acff; }
+.offer-v3 .offer-path-icon svg { width: 29px; height: 29px; }
+.offer-v3 .offer-path-arrow { position: absolute; left: -27px; top: 14px; padding: 0; font-size: 24px; line-height: 30px; color: #6694d9; }
+.offer-v3 .offer-path-part:last-child .offer-path-icon { background: #1759e8; color: #fff; border-color: #1759e8; box-shadow: 0 8px 24px #1759e824; }
+.offer-v3 .method-section .offer-path-icon { color: #195bdb; background: #e3eafa; border-color: #bbcff3; }
+.offer-v3 .method-section .offer-path-part:last-child .offer-path-icon { color: #fff; background: #1759e8; border-color: #1759e8; }
+.offer-v3 .final-content { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 5vw; }
+.offer-v3 .final-cta { max-width: none; }
+.offer-v3 .final-cta .primary-cta { width: 100%; max-width: none; min-height: 132px; padding: 32px 38px; font-size: clamp(21px, 1.65vw, 31px); line-height: 1.3; text-align: left; border-radius: 18px; }
+.offer-v3 .final-cta .primary-cta svg { width: 36px; height: 36px; flex-shrink: 0; }
+@media (max-width: 1100px) {
+ .offer-v3 .final-content { grid-template-columns: 1fr; }
+ .offer-v3 .final-cta .primary-cta { min-height: 112px; }
+}
+@media (max-width: 700px) {
+ .offer-v3 .offer-path { grid-template-columns: 1fr; gap: 22px; padding: 12px 0; font-size: 17px; }
+ .offer-v3 .offer-path-part { flex-direction: row; align-items: center; text-align: left; gap: 18px; }
+ .offer-v3 .offer-path-icon { width: 44px; height: 44px; flex: 0 0 44px; border-radius: 13px; }
+ .offer-v3 .offer-path-icon svg { width: 24px; height: 24px; }
+ .offer-v3 .offer-path-arrow { left: 12px; top: -24px; font-size: 19px; line-height: 22px; transform: rotate(90deg); }
+ .offer-v3 .final-cta .primary-cta { min-height: 108px; padding: 24px; font-size: 21px; border-radius: 14px; }
+ .offer-v3 .final-cta .primary-cta svg { width: 28px; height: 28px; }
+}

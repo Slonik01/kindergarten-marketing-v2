@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, Check } from "@phosphor-icons/react";
+import { ArrowRight, Check, Megaphone, Eye, ChatCircle, MapPin, Handshake, UsersThree } from "@phosphor-icons/react";
 
 function OfferButton({ onClick }: { onClick: () => void }) {
   return <button className="primary-cta" type="button" onClick={onClick}><span>Получить прогноз по набору детей</span><ArrowRight aria-hidden="true" weight="bold" /></button>;
@@ -10,7 +10,11 @@ function CheckList({ items, className = "" }: { items: string[]; className?: str
 }
 
 function PathLine({ children }: { children: string }) {
-  return <p className="offer-path">{children.split(" → ").map((item, index) => <span className="offer-path-part" key={item}>{index > 0 && <span className="offer-path-arrow"> → </span>}<strong>{item}</strong></span>)}</p>;
+  const icons = [Megaphone, Eye, ChatCircle, MapPin, Handshake, UsersThree];
+  return <p className="offer-path">{children.split(" → ").map((item, index) => {
+    const Icon = icons[index];
+    return <span className="offer-path-part" key={item}>{index > 0 && <span className="offer-path-arrow"> → </span>}<span className="offer-path-icon" aria-hidden="true"><Icon weight="duotone" /></span><strong>{item}</strong></span>;
+  })}</p>;
 }
 
 export function OfferSections({ onLead }: { onLead: () => void }) {
