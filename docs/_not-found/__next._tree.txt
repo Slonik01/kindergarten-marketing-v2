@@ -1,4 +1,4 @@
 :HL["/kindergarten-marketing-v2/_next/static/css/f8b5359388e7e41d.css","style"]
 :HL["/kindergarten-marketing-v2/_next/static/css/0316a7ea7e464da3.css","style"]
-:HL["/kindergarten-marketing-v2/_next/static/css/c63ec5c5a9df50b2.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"XtU53xv6MdXPDJOFnmCjJ"}
+:HL["/kindergarten-marketing-v2/_next/static/css/592cb300709ce66f.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"FblzFUD-dZJeiDJUgHn8w"}
