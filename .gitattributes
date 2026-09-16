@@ -1,4 +1,11 @@
 * text=auto eol=lf
 docs/** -text -whitespace linguist-generated=true
+_next/** -text -whitespace linguist-generated=true
+_not-found/** -text -whitespace linguist-generated=true
+404/** -text -whitespace linguist-generated=true
+privacy/** -text -whitespace linguist-generated=true
+/*.html -text -whitespace linguist-generated=true
+/__next.*.txt -text -whitespace linguist-generated=true
+/index.txt -text -whitespace linguist-generated=true
 *.png binary
 *.woff2 binary

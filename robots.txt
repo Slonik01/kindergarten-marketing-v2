@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /kindergarten-marketing-v2/
+
+Host: https://Slonik01.github.io/kindergarten-marketing-v2
+Sitemap: https://Slonik01.github.io/kindergarten-marketing-v2/sitemap.xml

@@ -11,6 +11,7 @@ import "@fontsource/outfit/500.css";
 import "@fontsource/outfit/600.css";
 import "@fontsource/outfit/700.css";
 import "./globals.css";
+import "./offer-v3.css";
 
 const siteUrl = "https://Slonik01.github.io/kindergarten-marketing-v2";
 
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   icons: { icon: "/kindergarten-marketing-v2/icon.svg" },
   title: "Дозагрузка детских садов в Астане и Алматы — МАРКЕТИНГ",
   description:
-    "Дозаполните группы в детском саду. Привлечение родителей в Астане и Алматы, экскурсии и договоры. Получите прогноз по набору детей и потенциальной выручке.",
+    "Система привлечения родителей через Facebook и Instagram в Астане и Алматы, которая приводит семьи, подходящие по бюджету и готовые прийти на экскурсию.",
   alternates: { canonical: `${siteUrl}/` },
   openGraph: {
     title: "Дозаполните группы в детском саду",
