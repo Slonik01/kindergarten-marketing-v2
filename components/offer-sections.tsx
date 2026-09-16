@@ -57,14 +57,13 @@ export function OfferSections({ onLead }: { onLead: () => void }) {
     </div>
 
     <section id="method" className="offer-section light-section method-section">
-      <div className="method-heading reveal"><p className="offer-kicker">Как мы дозагружаем группы</p><h2 className="display-title">Создаём систему, которая приводит родителей не просто к заявке, а к экскурсии и договору</h2><p className="method-intro">Максимально простая схема:</p></div>
+      <div className="method-heading reveal"><p className="offer-kicker">Как мы дозагружаем группы</p><h2 className="display-title">Создаём систему, которая приводит родителей не просто к заявке, а к экскурсии и договору</h2><Image className="method-object" src="/kindergarten-marketing-v2/assets/marketing-megaphone.png" alt="" aria-hidden="true" width={1536} height={1024} sizes="(max-width: 700px) 130px, (max-width: 1100px) 220px, 30vw" /><p className="method-intro">Максимально простая схема:</p></div>
       <div className="method-steps">
         <div className="method-step reveal"><h3>1. Показываем ваш сад родителям, которые уже выбирают детский сад</h3><p>Реклама в Facebook и Instagram работает постоянно и выводит ваш сад в поле зрения родителей в Астане и Алматы.</p></div>
         <div className="method-step reveal"><h3>2. До заявки объясняем, почему стоит выбрать именно вас</h3><p>Показываем программу, педагогов, атмосферу, условия, безопасность и вашу реальную уникальность — то, что вы знаете о своём саде, но новый родитель ещё не видит.</p></div>
         <div className="method-step reveal"><h3>3. Отсекаем случайный интерес</h3><p>Воронка помогает отделить родителей, которые просто собирают цены, от тех, кто подходит по бюджету и действительно выбирает сад.</p></div>
       </div>
       <div className="method-result reveal"><p>Дальше родитель проходит понятный путь:</p><PathLine>реклама → знакомство с садом → заявка → экскурсия → договор → ребёнок в группе</PathLine><p className="method-conclusion">Вместо ожидания рекомендаций появляется канал набора, которым можно управлять.</p></div>
-      <Image className="method-object" src="/kindergarten-marketing-v2/assets/marketing-megaphone.png" alt="" aria-hidden="true" width={1536} height={1024} sizes="(max-width: 640px) 180px, 300px" />
     </section>
 
     <div className="visibility-control-gradient-run offer-middle">

@@ -36,10 +36,12 @@
 .offer-v3 .revenue-total strong { display: inline; color: #ff526d; }
 .offer-v3 .revenue-chair { position: absolute; right: -30px; bottom: -20px; width: 220px; height: auto; opacity: .95; }
 .offer-v3 .method-section { background: radial-gradient(ellipse at 100% 0, #d7e1f2, transparent 45%), var(--paper); color: #101218; }
-.offer-v3 .method-heading { max-width: 1400px; }
+.offer-v3 .method-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, .36fr); column-gap: 4vw; align-items: center; }
+.offer-v3 .method-heading .offer-kicker { grid-column: 1 / -1; }
+.offer-v3 .method-heading .display-title { grid-column: 1; grid-row: 2; }
 .offer-v3 .method-heading .offer-kicker { color: #225bc5; }
 .offer-v3 .method-heading .display-title { max-width: 1340px; }
-.offer-v3 .method-intro { margin: 38px 0 0; }
+.offer-v3 .method-intro { grid-column: 1 / -1; margin: 38px 0 0; }
 .offer-v3 .method-steps { margin-top: 44px; border-top: 1px solid #bec2c9; }
 .offer-v3 .method-step { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 6vw; padding: 42px 0; border-bottom: 1px solid #bec2c9; }
 .offer-v3 .method-step h3 { margin: 0; color: #1455d7; font-family: "Oswald", sans-serif; font-size: clamp(28px, 2.5vw, 46px); line-height: 1.15; font-weight: 500; }
@@ -50,8 +52,8 @@
 .offer-v3 .offer-path-arrow { padding: 0 18px; font-weight: 400; color: var(--cyan); }
 .offer-v3 .method-section .offer-path { color: #1656d2; }
 .offer-v3 .method-section .offer-path-arrow { color: #3469b0; }
-.offer-v3 .method-conclusion { max-width: 1000px; padding-right: 150px; margin: 38px 0 12px; font-weight: 500; }
-.offer-v3 .method-object { position: absolute; right: 2%; bottom: 5px; width: 250px; height: auto; transform: rotate(-8deg); pointer-events: none; }
+.offer-v3 .method-conclusion { max-width: 1000px; padding-right: 0; margin: 38px 0 12px; font-weight: 500; }
+.offer-v3 .method-object { position: relative; grid-column: 2; grid-row: 2; justify-self: center; width: 115%; max-width: 470px; height: auto; transform: rotate(-8deg); pointer-events: none; }
 .offer-v3 .quality-heading { max-width: 1400px; }
 .offer-v3 .offer-kicker--statement { color: #8eb5ff; font-size: clamp(19px, 1.8vw, 30px) !important; }
 .offer-v3 .quality-grid, .offer-v3 .quality-resolution, .offer-v3 .ready-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 6vw; margin-top: 56px; }
@@ -139,8 +141,11 @@
   .offer-v3 .revenue-chair { right: -28px; bottom: -30px; width: 180px; }
   .offer-v3 .method-step { gap: 24px; padding: 30px 0; }
   .offer-v3 .method-step h3 { font-size: 30px; }
-  .offer-v3 .method-conclusion { padding-right: 0; margin-bottom: 84px; }
-  .offer-v3 .method-object { width: 190px; right: -20px; bottom: -4px; }
+  .offer-v3 .method-conclusion { padding-right: 0; margin-bottom: 12px; }
+  .offer-v3 .method-heading { grid-template-columns: minmax(0, 1fr) 120px; column-gap: 8px; }
+  .offer-v3 .method-heading .display-title { grid-column: 1 / -1; }
+  .offer-v3 .method-intro { grid-column: 1; grid-row: 3; margin-top: 26px; }
+  .offer-v3 .method-object { grid-column: 2; grid-row: 3; width: 130px; margin-top: 20px; }
   .offer-v3 .offer-path { flex-direction: column; gap: 0; font-size: 18px; }
   .offer-v3 .offer-path-part { flex-direction: column; align-items: flex-start; }
   .offer-v3 .offer-path-arrow { display: inline-block; padding: 3px 0; transform: rotate(90deg); }
