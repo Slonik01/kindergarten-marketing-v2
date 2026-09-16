@@ -49,8 +49,37 @@ function Brand() {
 }
 
 function SiteHeader({ onMenu, menuOpen }: { onMenu: () => void; menuOpen: boolean }) {
+  const headerRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const logo = header.querySelector(".brand-word");
+      const lightSection = document.querySelector("#method");
+      if (!logo || !lightSection) return;
+      const logoRect = logo.getBoundingClientRect();
+      const sectionRect = lightSection.getBoundingClientRect();
+      const center = logoRect.top + logoRect.height / 2;
+      const onLight = window.innerWidth > 640 && sectionRect.top <= center && sectionRect.bottom > center;
+      header.classList.toggle("site-header--light", onLight);
+    };
+    const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+    update();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    const observer = new ResizeObserver(schedule);
+    if (document.querySelector("main")) observer.observe(document.querySelector("main")!);
+    return () => {
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      observer.disconnect();
+      cancelAnimationFrame(frame);
+    };
+  }, []);
   return (
-    <header className="site-header">
+    <header ref={headerRef} className="site-header">
       <Brand />
       <button className="menu-button" type="button" onClick={onMenu} aria-label="Открыть меню" aria-expanded={menuOpen} aria-controls="site-menu" aria-haspopup="dialog">
         <span />

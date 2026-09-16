@@ -195,3 +195,7 @@
  .offer-v3 .final-cta .primary-cta { min-height: 108px; padding: 24px; font-size: 21px; border-radius: 14px; }
  .offer-v3 .final-cta .primary-cta svg { width: 28px; height: 28px; }
 }
+
+/* Switch the wordmark between neutral colors without complementary hues. */
+.offer-v3 .site-header .brand-word { mix-blend-mode: normal; color: #fff; }
+.offer-v3 .site-header--light .brand-word { color: #000; }
