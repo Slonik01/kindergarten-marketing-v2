@@ -52,9 +52,16 @@ export function OfferSections({ onLead }: { onLead: () => void }) {
           </ul>
         </div>
         <div className="revenue-examples reveal">
-          <div className="revenue-example"><h3>3 свободных места:</h3><p>2,7 млн ₸ за 6 месяцев → 5,4 млн ₸ за год</p></div>
-          <div className="revenue-example"><h3>5 свободных мест:</h3><p>4,5 млн ₸ → 9 млн ₸</p></div>
-          <div className="revenue-example"><h3>10 свободных мест:</h3><p>9 млн ₸ → 18 млн ₸</p></div>
+          <div className="revenue-table-scroll" role="region" aria-label="Выручка от заполнения свободных мест" tabIndex={0}>
+            <table className="revenue-table">
+              <thead><tr><th scope="col">Свободных мест</th><th scope="col">За 6 месяцев</th><th scope="col">За 12 месяцев</th><th scope="col">За 24 месяца</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">3 места</th><td>2 700 000 тг</td><td>5 400 000 тг</td><td>10 800 000 тг</td></tr>
+                <tr><th scope="row">5 мест</th><td>4 500 000 тг</td><td>9 000 000 тг</td><td>18 000 000 тг</td></tr>
+                <tr><th scope="row">10 мест</th><td>9 000 000 тг</td><td>18 000 000 тг</td><td>36 000 000 тг</td></tr>
+              </tbody>
+            </table>
+          </div>
           <div className="revenue-total"><p>За два года 10 заполненных мест — это уже до <strong>36 млн ₸ выручки</strong>.</p><Image className="revenue-chair" src="/kindergarten-marketing-v2/assets/kindergarten-chair.png" alt="" aria-hidden="true" width={1254} height={1254} sizes="(max-width: 640px) 170px, 230px" /></div>
         </div>
       </section>

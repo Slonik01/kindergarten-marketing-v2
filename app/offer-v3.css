@@ -199,3 +199,18 @@
 /* Switch the wordmark between neutral colors without complementary hues. */
 .offer-v3 .site-header .brand-word { mix-blend-mode: normal; color: #fff; }
 .offer-v3 .site-header--light .brand-word { color: #000; }
+
+.offer-v3 .revenue-table-scroll { width: 100%; overflow-x: auto; scrollbar-width: thin; scrollbar-color: #6099ff #152342; }
+.offer-v3 .revenue-table-scroll:focus-visible { outline: 2px solid var(--cyan); outline-offset: 5px; }
+.offer-v3 .revenue-table { width: 100%; min-width: 490px; border-collapse: collapse; font-size: clamp(13px, .95vw, 18px); line-height: 1.45; font-variant-numeric: tabular-nums; }
+.offer-v3 .revenue-table th, .offer-v3 .revenue-table td { padding: 26px 10px; border-bottom: 1px solid rgba(137,176,255,.3); text-align: right; }
+.offer-v3 .revenue-table thead th { color: #9dc0ff; font-weight: 500; vertical-align: bottom; }
+.offer-v3 .revenue-table th:first-child { text-align: left; padding-left: 0; }
+.offer-v3 .revenue-table tbody th { color: #83aeff; font-weight: 600; white-space: nowrap; }
+.offer-v3 .revenue-table td { white-space: nowrap; font-weight: 500; }
+.offer-v3 .revenue-table th:last-child, .offer-v3 .revenue-table td:last-child { padding-right: 0; }
+.offer-v3 .revenue-table tbody tr:last-child td:last-child { color: #ff526d; font-weight: 700; }
+@media (max-width: 700px) {
+ .offer-v3 .revenue-table { font-size: 13px; }
+ .offer-v3 .revenue-table th, .offer-v3 .revenue-table td { padding-block: 22px; }
+}
