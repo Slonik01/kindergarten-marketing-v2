@@ -42,7 +42,7 @@ export function OfferSections({ onLead }: { onLead: () => void }) {
       <section id="revenue" className="offer-section revenue-section">
         <div className="revenue-intro reveal">
           <p className="offer-kicker">Сколько денег находится в свободных местах</p>
-          <h2 className="display-title">Каждое свободное место — это не один потерянный платёж</h2>
+          <h2 className="display-title">Каждое свободное место – это не один потерянный платёж</h2>
           <p>Если ребёнок приходит в сад, он обычно остаётся не на один месяц.</p>
           <p>При среднем чеке <strong>150 000 ₸</strong> один ребёнок может принести:</p>
           <ul className="child-revenue">
@@ -52,6 +52,7 @@ export function OfferSections({ onLead }: { onLead: () => void }) {
           </ul>
         </div>
         <div className="revenue-examples reveal">
+          <p className="revenue-table-title">Сколько выручки могут принести свободные места</p>
           <div className="revenue-table-scroll" role="region" aria-label="Выручка от заполнения свободных мест" tabIndex={0}>
             <table className="revenue-table">
               <thead><tr><th scope="col">Свободных мест</th><th scope="col">За 6 месяцев</th><th scope="col">За 12 месяцев</th><th scope="col">За 24 месяца</th></tr></thead>
