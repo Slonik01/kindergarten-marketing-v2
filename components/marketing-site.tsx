@@ -10,7 +10,7 @@ import {
   Check,
   X,
 } from "@phosphor-icons/react";
-import { leadSchema } from "@/lib/lead-schema";
+import { leadSchema, leadQuestions } from "@/lib/lead-schema";
 import { OfferSections } from "@/components/offer-sections";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -21,6 +21,9 @@ type FormValues = {
   location: string;
   openSpots: number;
   contact: string;
+  budget: string;
+  situation: string;
+  readiness: string;
   consent: boolean;
   website: string;
 };
@@ -252,6 +255,20 @@ function LeadDialog({ dialogRef }: { dialogRef: React.RefObject<HTMLDialogElemen
                   <input required aria-labelledby="contact-label" autoComplete="off" autoCapitalize="none" spellCheck={false} placeholder="+7… или @username…" maxLength={160} aria-invalid={!!errors.contact} aria-describedby={errors.contact ? "contact-error" : undefined} {...register("contact")} />
                   {errors.contact && <small id="contact-error">{errors.contact.message}</small>}
                 </label>
+                {leadQuestions.map((question, index) => (
+                  <fieldset className="form-wide lead-question" key={question.name} aria-describedby={errors[question.name] ? `${question.name}-error` : undefined}>
+                    <legend><span className="lead-question-number" aria-hidden="true">{index + 1}</span>{question.title}</legend>
+                    <div className="lead-question-options">
+                      {question.options.map(option => (
+                        <label className="lead-choice" key={option}>
+                          <input type="radio" required value={option} aria-invalid={!!errors[question.name]} {...register(question.name)} />
+                          <span>{option}</span>
+                        </label>
+                      ))}
+                    </div>
+                    {errors[question.name] && <small id={`${question.name}-error`}>{errors[question.name]?.message}</small>}
+                  </fieldset>
+                ))}
                 <label className="form-honeypot" aria-hidden="true">
                   <span>Сайт</span>
                   <input tabIndex={-1} autoComplete="off" {...register("website")} />
