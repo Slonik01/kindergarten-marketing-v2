@@ -9,9 +9,7 @@ export const leadQuestions = [
 export const leadSchema = z.object({
   name: z.string().trim().min(2, "Укажите имя — минимум 2 символа").max(80, "Не больше 80 символов"),
   kindergarten: z.string().trim().min(2, "Укажите название сада").max(120, "Не больше 120 символов"),
-  location: z.string().trim().min(2, "Укажите город и район").max(120, "Не больше 120 символов"),
-  openSpots: z.coerce.number({ error: "Укажите число свободных мест" }).int("Укажите целое число мест").min(1, "Минимум одно место").max(300, "Максимум 300 мест"),
-  contact: z.string().trim().min(5, "Укажите телефон, email или контакт в мессенджере").max(160, "Не больше 160 символов"),
+  contact: z.string().trim().min(5, "Укажите Telegram или WhatsApp").max(160, "Не больше 160 символов"),
   budget: z.enum(leadQuestions[0].options, { error: "Выберите бюджет" }),
   situation: z.enum(leadQuestions[1].options, { error: "Выберите вашу ситуацию" }),
   readiness: z.enum(leadQuestions[2].options, { error: "Выберите готовность к запуску" }),

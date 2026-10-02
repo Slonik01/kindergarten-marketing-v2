@@ -114,7 +114,7 @@ export function OfferSections({ onLead }: { onLead: () => void }) {
     </div>
 
     <section id="system" className="chapter system-section final-section">
-      <div className="system-top"><h2 className="display-title system-title">Заберите выручку, которую сейчас забирает <em className="title-accent">недозагрузка</em></h2><p>Свободные места в группах могут стоить вашему саду от <strong>2,7 до 36 млн ₸ выручки</strong>.</p></div>
+      <div className="system-top"><h2 className="display-title system-title">Заберите выручку, которую крадёт <em className="title-accent">недозагрузка</em></h2><p>Свободные места в группах могут стоить вашему саду от <strong>2,7 до 36 млн ₸ выручки</strong>.</p></div>
       <div className="system-bottom"><p className="final-intro">Мы помогаем вернуть эту выручку через систему:</p><PathLine>Facebook / Instagram → знакомство с садом → заявка → экскурсия → договор → ребёнок в группе</PathLine>
         <div className="final-content"><div className="final-copy"><p>Вы не просто получаете рекламу.</p><p>Вы получаете систему, которая помогает:</p><CheckList items={["привлечь подходящих родителей", "показать ценность сада до первого звонка", "довести родителей до экскурсии", "увеличить количество договоров", "дозагрузить свободные места в группах"]} /></div><div className="final-cta"><OfferButton onClick={onLead} /></div></div>
       </div>

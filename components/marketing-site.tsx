@@ -18,8 +18,6 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 type FormValues = {
   name: string;
   kindergarten: string;
-  location: string;
-  openSpots: number;
   contact: string;
   budget: string;
   situation: string;
@@ -163,7 +161,7 @@ function LeadDialog({ dialogRef }: { dialogRef: React.RefObject<HTMLDialogElemen
     reset,
     formState: { errors },
   } = useForm<FormValues>({
-    defaultValues: { openSpots: 5, consent: false, website: "" },
+    defaultValues: { consent: false, website: "" },
     resolver: (values) => {
       const parsed = leadSchema.safeParse(values);
       if (parsed.success) return { values: parsed.data, errors: {} };
@@ -178,7 +176,7 @@ function LeadDialog({ dialogRef }: { dialogRef: React.RefObject<HTMLDialogElemen
     dialogRef.current?.close();
     if (state === "success") {
       setState("idle");
-      reset({ openSpots: 5, consent: false, website: "" });
+      reset({ consent: false, website: "" });
     }
   };
 
@@ -219,15 +217,15 @@ function LeadDialog({ dialogRef }: { dialogRef: React.RefObject<HTMLDialogElemen
         {state === "success" ? (
           <div className="form-success" aria-live="polite">
             <span><Check aria-hidden="true" weight="bold" /></span>
-            <h2 id="lead-dialog-title" tabIndex={-1} ref={(node) => node?.focus()}>Форма заполнена</h2>
-            <p>Данные прошли проверку. Это демонстрационная версия: заявка никуда не отправлялась.</p>
+            <h2 id="lead-dialog-title" tabIndex={-1} ref={(node) => node?.focus()}>Заявка отправлена</h2>
+            <p>Свяжемся с вами, уточним загрузку групп и подготовим первый прогноз.</p>
             <button type="button" className="primary-cta" onClick={close}>Вернуться на сайт</button>
           </div>
         ) : (
           <>
             <p className="dialog-eyebrow">Астана и Алматы</p>
             <h2 id="lead-dialog-title">Прогноз по набору детей</h2>
-            <p className="dialog-intro">Демонстрация формы прогноза. Можно проверить заполнение полей; данные никуда не отправляются.</p>
+            <p className="dialog-intro">Расскажите о вашем саде и оставьте контакт в Telegram или WhatsApp. Подготовим прогноз и обсудим план привлечения родителей.</p>
             <form onSubmit={onSubmit} noValidate>
               <div className="form-grid">
                 <label>
@@ -240,19 +238,9 @@ function LeadDialog({ dialogRef }: { dialogRef: React.RefObject<HTMLDialogElemen
                   <input required aria-labelledby="kindergarten-label" autoComplete="organization" maxLength={120} aria-invalid={!!errors.kindergarten} aria-describedby={errors.kindergarten ? "kindergarten-error" : undefined} {...register("kindergarten")} />
                   {errors.kindergarten && <small id="kindergarten-error">{errors.kindergarten.message}</small>}
                 </label>
-                <label>
-                  <span id="location-label">Город и район</span>
-                  <input required aria-labelledby="location-label" autoComplete="address-level2" placeholder="Например: Астана, Есиль…" maxLength={120} aria-invalid={!!errors.location} aria-describedby={errors.location ? "location-error" : undefined} {...register("location")} />
-                  {errors.location && <small id="location-error">{errors.location.message}</small>}
-                </label>
-                <label>
-                  <span id="openSpots-label">Свободных мест сейчас</span>
-                  <input required aria-labelledby="openSpots-label" type="number" min="1" max="300" step="1" inputMode="numeric" aria-invalid={!!errors.openSpots} aria-describedby={errors.openSpots ? "openSpots-error" : undefined} {...register("openSpots", { valueAsNumber: true })} />
-                  {errors.openSpots && <small id="openSpots-error">{errors.openSpots.message}</small>}
-                </label>
                 <label className="form-wide">
-                  <span id="contact-label">Telegram, WhatsApp, телефон или email</span>
-                  <input required aria-labelledby="contact-label" autoComplete="off" autoCapitalize="none" spellCheck={false} placeholder="+7… или @username…" maxLength={160} aria-invalid={!!errors.contact} aria-describedby={errors.contact ? "contact-error" : undefined} {...register("contact")} />
+                  <span id="contact-label">Telegram или WhatsApp</span>
+                  <input required aria-labelledby="contact-label" autoComplete="off" autoCapitalize="none" spellCheck={false} placeholder="@username или номер WhatsApp" maxLength={160} aria-invalid={!!errors.contact} aria-describedby={errors.contact ? "contact-error" : undefined} {...register("contact")} />
                   {errors.contact && <small id="contact-error">{errors.contact.message}</small>}
                 </label>
                 {leadQuestions.map((question, index) => (
@@ -261,7 +249,7 @@ function LeadDialog({ dialogRef }: { dialogRef: React.RefObject<HTMLDialogElemen
                     <div className="lead-question-options">
                       {question.options.map(option => (
                         <label className="lead-choice" key={option}>
-                          <input type="radio" required value={option} aria-invalid={!!errors[question.name]} {...register(question.name)} />
+                          <input type="radio" required value={option} {...register(question.name)} />
                           <span>{option}</span>
                         </label>
                       ))}
@@ -283,7 +271,7 @@ function LeadDialog({ dialogRef }: { dialogRef: React.RefObject<HTMLDialogElemen
               {errors.consent && <small className="consent-error" id="consent-error">{errors.consent.message}</small>}
               <p className="sr-only" role="status">{Object.keys(errors).length > 0 ? "Проверьте отмеченные поля формы." : ""}</p>
               <button className="primary-cta form-submit" type="submit">
-                <span>Проверить форму</span>
+                <span>Получить прогноз</span>
                 <ArrowRight aria-hidden="true" weight="bold" />
               </button>
             </form>
